@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+/* ══════════════════════════════════════════════════════════
+   THEME — colors, fonts, animations
+   ══════════════════════════════════════════════════════════ */
+@theme {
+  /* Brand colors */
+  --color-primary-50: #eff6ff;
+  --color-primary-100: #dbeafe;
+  --color-primary-500: #0ea5e9;
+  --color-primary-600: #0284c7;
+  --color-primary-700: #0369a1;
+  --color-primary-800: #075985;
+  --color-primary-900: #0c4a6e;
+
+  --color-accent-500: #10b981;
+  --color-accent-600: #059669;
+
+  /* Fonts — Josefin Sans is the site-wide default */
+  --font-sans: "Josefin Sans", system-ui, -apple-system, sans-serif;
+  --font-hindi: "Noto Sans Devanagari", sans-serif;
+  --font-urdu: "Noto Nastaliq Urdu", serif;
+
+  /* Animations */
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+}
+
+/* ══════════════════════════════════════════════════════════
+   BASE — html, body, typography defaults
+   ══════════════════════════════════════════════════════════ */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--color-slate-50);
+    color: var(--color-slate-800);
+    font-family: var(--font-sans);
+    font-optical-sizing: auto;
+    overflow-x: hidden;
+    letter-spacing: 0.01em;
+  }
+
+  /* Headings: Josefin Sans shines with tighter tracking + bold */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
+  /* Script-specific fonts override Josefin */
+  .hindi {
+    font-family: var(--font-hindi);
+    letter-spacing: 0;
+  }
+
+  .urdu {
+    font-family: var(--font-urdu);
+    direction: rtl;
+    line-height: 2.2;
+    letter-spacing: 0;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════
+   COMPONENTS — reusable utilities
+   ══════════════════════════════════════════════════════════ */
+@utility container-custom {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+@utility section-padding {
+  @apply py-16 md:py-24;
+}
+
+@utility btn-primary {
+  @apply inline-flex items-center gap-2 bg-primary-700 hover:bg-primary-800 text-white font-semibold px-6 py-3 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5;
+}
+
+@utility btn-outline {
+  @apply inline-flex items-center gap-2 border-2 border-primary-700 text-primary-700 hover:bg-primary-700 hover:text-white font-semibold px-6 py-3 rounded-full transition-all duration-300;
+}
+
+@utility section-title {
+  @apply text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 text-center mb-4;
+}
+
+@utility section-subtitle {
+  @apply text-center text-slate-600 max-w-2xl mx-auto mb-12;
+}
+
+@utility card {
+  @apply bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 p-6;
+}
+
+@utility gradient-text {
+  @apply bg-gradient-to-r from-primary-600 to-accent-500 bg-clip-text text-transparent;
+}
+
+/* ══════════════════════════════════════════════════════════
+   SCROLLBAR & SELECTION
+   ══════════════════════════════════════════════════════════ */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #0284c7;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0369a1;
+}
+
+::selection {
+  background: #0284c7;
+  color: white;
+}
