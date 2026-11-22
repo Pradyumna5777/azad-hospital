@@ -124,7 +124,7 @@ export default function Contact() {
       `Message: ${form.message.trim()}`,
     ].join('\n');
 
-    const url = `https://wa.me/916207263830?text=${encodeURIComponent(text)}`;
+    const url = `https://wa.me/917322983764?text=${encodeURIComponent(text)}`;
 
     setTimeout(() => {
       window.open(url, '_blank', 'noopener,noreferrer');
@@ -221,7 +221,7 @@ export default function Contact() {
               title="WhatsApp"
               accent="from-emerald-500 to-green-600"
               delay={0.2}
-              href="https://wa.me/916207263830"
+              href="https://wa.me/917322983764"
             >
               <p className="text-sm text-slate-700">Chat with us instantly</p>
               <p className="text-xs text-emerald-600 font-semibold mt-1 flex items-center gap-1 group-hover:gap-2 transition-all">
