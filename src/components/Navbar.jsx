@@ -94,115 +94,118 @@ export default function Navbar() {
       >
         <div className="container-custom flex h-14 items-center justify-between gap-3">
 
-          {/* LOGO */}
+  {/* LOGO */}
+  <Link
+    to="home"
+    smooth
+    duration={600}
+    onClick={closeMenu}
+    className="group flex shrink-0 cursor-pointer items-center gap-2.5 sm:gap-3"
+  >
+    <div className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br text-white shadow-lg shadow-primary-700/20 transition-transform duration-300 group-hover:scale-105 sm:h-12 sm:w-12 sm:rounded-2xl">
+      <img
+        src="/images/logo.jpeg"
+        alt="Azad Hospital Logo"
+        className="h-full w-full rounded-xl object-contain p-1 sm:rounded-2xl"
+        onError={(e) => {
+          e.currentTarget.style.display = 'none';
+          e.currentTarget.parentElement.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill="currentColor" class="h-5 w-5 sm:h-6 sm:w-6"><path d="M0 384V288c0-17.7 14.3-32 32-32h64c17.7 0 32 14.3 32 32v96c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zm96-176v-96c0-17.7 14.3-32 32-32h64c17.7 0 32 14.3 32 32v96c0 17.7-14.3 32-32 32h-64c-17.7 0-32-14.3-32-32zm96 96v-96c0-17.7 14.3-32 32-32h64c17.7 0 32 14.3 32 32v96c0 17.7-14.3 32-32 32h-64c-17.7 0-32-14.3-32-32zm96-176v-96c0-17.7 14.3-32 32-32h64c17.7 0 32 14.3 32 32v96c0 17.7-14.3 32-32 32h-64c-17.7 0-32-14.3-32-32zm96 176v-96c0-17.7 14.3-32 32-32h64c17.7 0 32 14.3 32 32v96c0 17.7-14.3 32-32 32h-64c-17.7 0-32-14.3-32-32zM32 448h64c17.7 0 32 14.3 32 32v32c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32v-32c0-17.7 14.3-32 32-32zm96 0h64c17.7 0 32 14.3 32 32v32c0 17.7-14.3 32-32 32h-64c-17.7 0-32-14.3-32-32v-32c0-17.7 14.3-32 32-32zm96 0h64c17.7 0 32 14.3 32 32v32c0 17.7-14.3 32-32 32h-64c-17.7 0-32-14.3-32-32v-32c0-17.7 14.3-32 32-32zm96 0h64c17.7 0 32 14.3 32 32v32c0 17.7-14.3 32-32 32h-64c-17.7 0-32-14.3-32-32v-32c0-17.7 14.3-32 32-32zm96 0h64c17.7 0 32 14.3 32 32v32c0 17.7-14.3 32-32 32h-64c-17.7 0-32-14.3-32-32v-32c0-17.7 14.3-32 32-32z"/></svg>';
+        }}
+      />
 
-          <Link
-            to="home"
-            smooth
-            duration={600}
-            onClick={closeMenu}
-            className="group flex shrink-0 cursor-pointer items-center gap-2.5 sm:gap-3"
-          >
-            <div className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-primary-700 to-teal-500 text-white shadow-lg shadow-primary-700/20 transition-transform duration-300 group-hover:scale-105 sm:h-12 sm:w-12 sm:rounded-2xl">
-              <FaHospital className="text-lg sm:text-xl" />
+    </div>
 
-              <span className="absolute -bottom-1 -right-1 h-3.5 w-3.5 rounded-full border-2 border-white bg-emerald-400" />
-            </div>
+    <div className="leading-tight">
+      <h1 className="text-sm font-extrabold tracking-tight text-slate-900 sm:text-lg">
+        AZAD <span className="text-primary-700">HOSPITAL</span>
+      </h1>
 
-            <div className="leading-tight">
-              <h1 className="text-sm font-extrabold tracking-tight text-slate-900 sm:text-lg">
-                AZAD <span className="text-primary-700">HOSPITAL</span>
-              </h1>
+      <p className="mt-1 text-[10px] font-medium tracking-[0.16em] text-slate-500 sm:text-xs">
+        SIWAN, BIHAR
+      </p>
+    </div>
+  </Link>
 
-              <p className="mt-1 text-[10px] font-medium tracking-[0.16em] text-slate-500 sm:text-xs">
-                SIWAN, BIHAR
-              </p>
-            </div>
-          </Link>
+  {/* DESKTOP NAVIGATION */}
+  <ul className="hidden items-center gap-0.5 xl:flex">
+    {navItems.map((item) => (
+      <li key={item.to}>
+        <Link
+          to={item.to}
+          smooth
+          duration={600}
+          spy
+          offset={-85}
+          onSetActive={() => setActive(item.to)}
+          className={`relative cursor-pointer rounded-full px-3 py-2.5 text-[13px] font-semibold transition-all duration-300 ${
+            active === item.to
+              ? 'bg-primary-700 text-white shadow-md shadow-primary-700/20'
+              : 'text-slate-600 hover:bg-primary-50 hover:text-primary-700'
+          }`}
+        >
+          {item.name}
+        </Link>
+      </li>
+    ))}
+  </ul>
 
-          {/* DESKTOP NAVIGATION */}
+  {/* DESKTOP EMERGENCY BUTTON */}
+  <a
+    href="tel:6207263830"
+    className="hidden shrink-0 items-center gap-2.5 rounded-full bg-gradient-to-r from-rose-600 to-red-500 px-5 py-3 text-white shadow-lg shadow-red-500/20 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-red-500/30 xl:flex"
+  >
+    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/20">
+      <FaPhoneAlt className="text-xs" />
+    </span>
 
-          <ul className="hidden items-center gap-0.5 xl:flex">
-            {navItems.map((item) => (
-              <li key={item.to}>
-                <Link
-                  to={item.to}
-                  smooth
-                  duration={600}
-                  spy
-                  offset={-85}
-                  onSetActive={() => setActive(item.to)}
-                  className={`relative cursor-pointer rounded-full px-3 py-2.5 text-[13px] font-semibold transition-all duration-300 ${
-                    active === item.to
-                      ? 'bg-primary-700 text-white shadow-md shadow-primary-700/20'
-                      : 'text-slate-600 hover:bg-primary-50 hover:text-primary-700'
-                  }`}
-                >
-                  {item.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
+    <span className="text-left">
+      <span className="block text-[9px] font-medium uppercase tracking-wider text-white/80">
+        Emergency
+      </span>
 
-          {/* DESKTOP EMERGENCY BUTTON */}
+      <span className="block text-sm font-bold">
+        6207263830
+      </span>
+    </span>
+  </a>
 
-          <a
-            href="tel:6207263830"
-            className="hidden shrink-0 items-center gap-2.5 rounded-full bg-gradient-to-r from-rose-600 to-red-500 px-5 py-3 text-white shadow-lg shadow-red-500/20 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-red-500/30 xl:flex"
-          >
-            <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/20">
-              <FaPhoneAlt className="text-xs" />
-            </span>
+  {/* MOBILE ACTIONS */}
+  <div className="flex items-center gap-2 xl:hidden">
 
-            <span className="text-left">
-              <span className="block text-[9px] font-medium uppercase tracking-wider text-white/80">
-                Emergency
-              </span>
+    <a
+      href="tel:6207263830"
+      aria-label="Call Azad Hospital"
+      className="flex h-10 w-10 items-center justify-center rounded-full bg-rose-50 text-rose-600 transition hover:bg-rose-100 sm:h-11 sm:w-11"
+    >
+      <FaPhoneAlt className="text-sm" />
+    </a>
 
-              <span className="block text-sm font-bold">
-                6207263830
-              </span>
-            </span>
-          </a>
-
-          {/* MOBILE ACTIONS */}
-
-          <div className="flex items-center gap-2 xl:hidden">
-
-            <a
-              href="tel:6207263830"
-              aria-label="Call Azad Hospital"
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-rose-50 text-rose-600 transition hover:bg-rose-100 sm:h-11 sm:w-11"
-            >
-              <FaPhoneAlt className="text-sm" />
-            </a>
-
-            <button
-              type="button"
-              onClick={() => setIsOpen(!isOpen)}
-              aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
-              aria-expanded={isOpen}
-              aria-controls="mobile-navigation"
-              className={`flex h-10 w-10 items-center justify-center rounded-xl border transition-all duration-300 sm:h-11 sm:w-11 ${
-                isOpen
-                  ? 'border-primary-200 bg-primary-50 text-primary-700'
-                  : 'border-slate-200 bg-white text-slate-800 hover:border-primary-200'
-              }`}
-            >
-              <AnimatePresence mode="wait" initial={false}>
-                <motion.span
-                  key={isOpen ? 'close' : 'open'}
-                  initial={{ rotate: -90, opacity: 0 }}
-                  animate={{ rotate: 0, opacity: 1 }}
-                  exit={{ rotate: 90, opacity: 0 }}
-                  transition={{ duration: 0.18 }}
-                >
-                  {isOpen ? <FaTimes /> : <FaBars />}
-                </motion.span>
-              </AnimatePresence>
-            </button>
-          </div>
-        </div>
+    <button
+      type="button"
+      onClick={() => setIsOpen(!isOpen)}
+      aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
+      aria-expanded={isOpen}
+      aria-controls="mobile-navigation"
+      className={`flex h-10 w-10 items-center justify-center rounded-xl border transition-all duration-300 sm:h-11 sm:w-11 ${
+        isOpen
+          ? 'border-primary-200 bg-primary-50 text-primary-700'
+          : 'border-slate-200 bg-white text-slate-800 hover:border-primary-200'
+      }`}
+    >
+      <AnimatePresence mode="wait" initial={false}>
+        <motion.span
+          key={isOpen ? 'close' : 'open'}
+          initial={{ rotate: -90, opacity: 0 }}
+          animate={{ rotate: 0, opacity: 1 }}
+          exit={{ rotate: 90, opacity: 0 }}
+          transition={{ duration: 0.18 }}
+        >
+          {isOpen ? <FaTimes /> : <FaBars />}
+        </motion.span>
+      </AnimatePresence>
+    </button>
+  </div>
+</div>
 
         {/* TABLET NAVIGATION */}
 

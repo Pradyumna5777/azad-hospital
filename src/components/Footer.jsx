@@ -74,8 +74,17 @@ export default function Footer() {
             className="md:col-span-5"
           >
             <div className="flex items-center gap-3 mb-5">
-              <div className="relative w-12 h-12 rounded-2xl bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white shadow-lg shadow-primary-500/30">
-                <FaHospital className="text-lg" />
+              <div className="relative w-12 h-12 rounded-2xl bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white shadow-lg shadow-primary-500/30 overflow-hidden">
+                <img
+                  src="/images/logo.png"
+                  alt="Azad Hospital Logo"
+                  className="w-full h-full object-contain p-1"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                    e.currentTarget.parentElement.innerHTML =
+                      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill="currentColor" class="w-5 h-5"><path d="M0 384V288c0-17.7 14.3-32 32-32h64c17.7 0 32 14.3 32 32v96c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zm96-176v-96c0-17.7 14.3-32 32-32h64c17.7 0 32 14.3 32 32v96c0 17.7-14.3 32-32 32h-64c-17.7 0-32-14.3-32-32zm96 96v-96c0-17.7 14.3-32 32-32h64c17.7 0 32 14.3 32 32v96c0 17.7-14.3 32-32 32h-64c-17.7 0-32-14.3-32-32zm96-176v-96c0-17.7 14.3-32 32-32h64c17.7 0 32 14.3 32 32v96c0 17.7-14.3 32-32 32h-64c-17.7 0-32-14.3-32-32zm96 176v-96c0-17.7 14.3-32 32-32h64c17.7 0 32 14.3 32 32v96c0 17.7-14.3 32-32 32h-64c-17.7 0-32-14.3-32-32z"/></svg>';
+                  }}
+                />
                 <span className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary-500 to-accent-500 blur-md opacity-40 -z-10" />
               </div>
               <div>
@@ -199,21 +208,34 @@ export default function Footer() {
             <h4 className="font-bold text-white mb-5 text-sm uppercase tracking-wider">
               Timings
             </h4>
-            <ul className="space-y-3 text-sm">
-              <li className="flex items-start gap-2">
-                <FaClock className="text-orange-400 text-xs mt-1 shrink-0" />
-                <div>
-                  <p className="text-slate-300 font-medium">Mon – Sat</p>
-                  <p className="text-slate-500 text-xs">9:00 AM – 4:00 PM</p>
-                  <p className="text-slate-500 text-xs">6:00 PM – 8:00 PM</p>
+            <ul className="space-y-4 text-sm">
+              {/* Male doctor */}
+              <li>
+                <div className="flex items-center gap-1.5 mb-1">
+                  <FaClock className="text-blue-400 text-[10px] shrink-0" />
+                  <p className="text-slate-300 font-semibold text-xs">
+                    Dr. Abul Kalam Azad
+                  </p>
                 </div>
+                <p className="text-slate-500 text-[11px] pl-4">
+                  Mon–Sat: 10 AM – 4 PM and 6 PM – 8 PM
+                </p>
+                <p className="text-slate-500 text-[11px] pl-4">
+                  Sun: 10 AM – 2 PM
+                </p>
               </li>
-              <li className="flex items-start gap-2">
-                <FaClock className="text-orange-400 text-xs mt-1 shrink-0" />
-                <div>
-                  <p className="text-slate-300 font-medium">Sunday</p>
-                  <p className="text-slate-500 text-xs">9:00 AM – 2:00 PM</p>
+
+              {/* Female doctor */}
+              <li>
+                <div className="flex items-center gap-1.5 mb-1">
+                  <FaClock className="text-rose-400 text-[10px] shrink-0" />
+                  <p className="text-slate-300 font-semibold text-xs">
+                    Dr. Naghma Aman
+                  </p>
                 </div>
+                <p className="text-slate-500 text-[11px] pl-4">
+                  All 7 Days: 10 AM – 4 PM
+                </p>
               </li>
             </ul>
 

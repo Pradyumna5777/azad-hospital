@@ -18,6 +18,7 @@ const items = [
     { type: 'video', src: '/videos/hospital-tour1.mp4', alt: 'Independance Day', poster: '/images/cover2.jpeg', category: 'Celebration' },
   { type: 'video', src: '/videos/hospital-tour2.mp4', alt: 'Independance Day', poster: '/images/cover1.jpeg', category: 'Celebration' },
   { type: 'video', src: '/videos/hospital-tour3.mp4', alt: 'Independance Day', poster: '/images/cover3.jpeg', category: 'Celebration' },
+  { type: 'video', src: '/videos/hospital-tour4.mp4', alt: 'NICU', poster: '/images/cover5.jpeg', category: 'Facilities' },
   { type: 'image', src: '/images/hospital-2.jpeg', alt: 'Waiting Area', category: 'Facilities' },
   { type: 'image', src: '/images/hospital-3.jpeg', alt: 'Pharmacy', category: 'Facilities' },
   { type: 'image', src: '/images/hospital-4.jpeg', alt: 'Parking Area', category: 'Parking Area' },

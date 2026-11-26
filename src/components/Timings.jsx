@@ -1,4 +1,3 @@
-
 import { motion } from 'framer-motion';
 import {
   FaClock,
@@ -7,48 +6,64 @@ import {
   FaCalendarAlt,
   FaRegCalendarCheck,
   FaInfoCircle,
-  FaArrowRight,
+  FaUserMd,
+  FaFemale,
+  FaCheckCircle,
 } from 'react-icons/fa';
 
-const timings = [
+/* ── Doctor schedules ─────────────────────────────────── */
+const doctors = [
   {
-    icon: <FaSun />,
-    title: 'Morning',
-    hindi: 'सुबह',
-    time: '9:00 AM',
-    endTime: '4:00 PM',
-    period: '9:00 AM – 4:00 PM',
-    sub: 'Monday to Saturday',
-    color: 'from-amber-400 to-orange-500',
-    light: 'bg-amber-50',
-    accent: 'text-amber-600',
-    tag: 'MORNING HOURS',
+    name: 'Dr. Abul Kalam Azad',
+    specialty: 'Pediatrician & Neonatologist',
+    hindi: 'नवजात शिशु एवं बाल रोग विशेषज्ञ',
+    icon: <FaUserMd />,
+    color: 'from-blue-600 to-primary-700',
+    light: 'bg-blue-50',
+    accent: 'text-blue-700',
+    ring: 'ring-blue-100',
+    schedule: [
+      {
+        icon: <FaSun />,
+        title: 'Morning',
+        hindi: 'सुबह',
+        period: '10:00 AM – 4:00 PM',
+        sub: 'Monday to Saturday',
+      },
+      {
+        icon: <FaMoon />,
+        title: 'Evening',
+        hindi: 'शाम',
+        period: '6:00 PM – 8:00 PM',
+        sub: 'Monday to Saturday',
+      },
+      {
+        icon: <FaCalendarAlt />,
+        title: 'Sunday',
+        hindi: 'रविवार',
+        period: '10:00 AM – 2:00 PM',
+        sub: 'Sunday · Half Day',
+      },
+    ],
   },
   {
-    icon: <FaMoon />,
-    title: 'Evening',
-    hindi: 'शाम',
-    time: '6:00 PM',
-    endTime: '8:00 PM',
-    period: '6:00 PM – 8:00 PM',
-    sub: 'Monday to Saturday',
-    color: 'from-indigo-500 to-purple-600',
-    light: 'bg-indigo-50',
-    accent: 'text-indigo-600',
-    tag: 'EVENING HOURS',
-  },
-  {
-    icon: <FaCalendarAlt />,
-    title: 'Sunday',
-    hindi: 'रविवार',
-    time: '9:00 AM',
-    endTime: '2:00 PM',
-    period: '9:00 AM – 2:00 PM',
-    sub: 'Sunday · Half Day',
-    color: 'from-emerald-500 to-teal-600',
-    light: 'bg-emerald-50',
-    accent: 'text-emerald-600',
-    tag: 'SUNDAY HOURS',
+    name: 'Dr. Naghma Aman',
+    specialty: 'Obstetrician & Gynecologist',
+    hindi: 'प्रसूति एवं स्त्री रोग विशेषज्ञ',
+    icon: <FaFemale />,
+    color: 'from-rose-500 to-pink-600',
+    light: 'bg-rose-50',
+    accent: 'text-rose-700',
+    ring: 'ring-rose-100',
+    schedule: [
+      {
+        icon: <FaSun />,
+        title: 'Daily',
+        hindi: 'प्रतिदिन',
+        period: '10:00 AM – 4:00 PM',
+        sub: 'All 7 Days (Mon – Sun)',
+      },
+    ],
   },
 ];
 
@@ -69,10 +84,9 @@ export default function Timings() {
     >
       {/* Background decoration */}
       <div className="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-blue-200/20 blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-24 -left-24 w-80 h-80 rounded-full bg-teal-200/20 blur-3xl pointer-events-none" />
+      <div className="absolute -bottom-24 -left-24 w-80 h-80 rounded-full bg-rose-200/20 blur-3xl pointer-events-none" />
 
       <div className="container-custom relative z-10">
-
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 25 }}
@@ -83,7 +97,7 @@ export default function Timings() {
         >
           <span className="inline-flex items-center gap-2 rounded-full border border-blue-100 bg-white px-5 py-2 text-xs sm:text-sm font-bold tracking-[0.15em] text-blue-700 shadow-sm mb-5">
             <FaClock className="text-teal-500" />
-            VISITING HOURS
+            DOCTOR TIMINGS
           </span>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
@@ -95,78 +109,100 @@ export default function Timings() {
           </p>
 
           <p className="mt-4 text-sm sm:text-base text-slate-600 leading-relaxed max-w-xl mx-auto">
-            Plan your visit with ease. Please check our consultation
-            schedule before coming to the hospital.
+            Doctor-specific schedules so you can plan your visit with ease. Please
+            check the relevant schedule before coming to the hospital.
           </p>
         </motion.div>
 
-        {/* Timing cards */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto"
-        >
-          {timings.map((item, index) => (
+        {/* ── Doctor schedule grid ── */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 max-w-6xl mx-auto">
+          {doctors.map((doc, docIndex) => (
             <motion.div
-              key={item.title}
-              variants={cardVariants}
-              transition={{ delay: index * 0.12 }}
-              whileHover={{ y: -9 }}
-              className="group relative"
+              key={doc.name}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 0.6, delay: docIndex * 0.12 }}
+              className="relative overflow-hidden rounded-3xl border border-white bg-white p-6 sm:p-8 shadow-[0_10px_35px_rgba(15,23,42,0.06)]"
             >
-              <div className="relative h-full overflow-hidden rounded-3xl border border-white bg-white p-7 sm:p-8 text-center shadow-[0_10px_35px_rgba(15,23,42,0.06)] transition-all duration-300 group-hover:shadow-[0_22px_50px_rgba(37,99,235,0.12)]">
+              {/* Decorative corner blob */}
+              <div
+                className={`absolute -top-20 -right-20 h-48 w-48 rounded-full ${doc.light} opacity-70 blur-2xl pointer-events-none`}
+              />
 
-                {/* Decorative circle */}
-                <div className={`absolute -top-16 -right-16 h-40 w-40 rounded-full ${item.light} opacity-70 transition-transform duration-500 group-hover:scale-125`} />
-
-                <div className="relative z-10">
-
-                  {/* Icon */}
-                  <div className={`mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br ${item.color} text-3xl text-white shadow-lg transition-transform duration-500 group-hover:rotate-6 group-hover:scale-110`}>
-                    {item.icon}
+              <div className="relative z-10">
+                {/* Doctor header */}
+                <div className="flex items-center gap-4 mb-7">
+                  <div
+                    className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br ${doc.color} text-2xl text-white shadow-lg`}
+                  >
+                    {doc.icon}
                   </div>
-
-                  {/* Label */}
-                  <div className={`mt-6 inline-flex rounded-full ${item.light} px-4 py-1.5 text-[10px] font-extrabold tracking-[0.15em] ${item.accent}`}>
-                    {item.tag}
-                  </div>
-
-                  <h3 className="mt-4 text-2xl font-extrabold text-slate-900">
-                    {item.title}
-                  </h3>
-
-                  <p className="hindi mt-1 text-sm font-semibold text-slate-500">
-                    {item.hindi}
-                  </p>
-
-                  {/* Time */}
-                  <div className="mt-6 rounded-2xl bg-slate-50 px-4 py-5 transition-colors duration-300 group-hover:bg-blue-50/70">
-                    <div className="flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">
-                      <FaClock className={item.accent} />
-                      Consultation Time
-                    </div>
-
-                    <p className="text-xl sm:text-2xl font-extrabold tracking-tight text-slate-800">
-                      {item.period}
+                  <div className="min-w-0">
+                    <h3 className="text-lg sm:text-xl font-extrabold text-slate-900 leading-tight truncate">
+                      {doc.name}
+                    </h3>
+                    <p className={`text-xs sm:text-sm font-semibold ${doc.accent} truncate`}>
+                      {doc.specialty}
                     </p>
-                  </div>
-
-                  {/* Days */}
-                  <div className="mt-5 flex items-center justify-center gap-2 text-sm font-semibold text-slate-500">
-                    <FaRegCalendarCheck className={item.accent} />
-                    {item.sub}
+                    <p className="hindi text-xs text-slate-500 truncate">{doc.hindi}</p>
                   </div>
                 </div>
 
-                {/* Bottom accent */}
-                <div className={`absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r ${item.color} transition-all duration-500 group-hover:w-full`} />
+                {/* Schedule rows */}
+                <div className="space-y-3">
+                  {doc.schedule.map((slot, i) => (
+                    <motion.div
+                      key={slot.title}
+                      variants={cardVariants}
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.2 + i * 0.08 }}
+                      whileHover={{ x: 4 }}
+                      className={`group flex items-center gap-4 rounded-2xl ${doc.light} p-4 ring-1 ${doc.ring} transition-all duration-300`}
+                    >
+                      <div
+                        className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br ${doc.color} text-white shadow-md group-hover:scale-110 transition-transform duration-300`}
+                      >
+                        {slot.icon}
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-2 flex-wrap">
+                          <p className="text-sm font-extrabold text-slate-900">
+                            {slot.title}
+                          </p>
+                          <span className="hindi text-[11px] font-semibold text-slate-500">
+                            {slot.hindi}
+                          </span>
+                        </div>
+                        <p className={`text-base sm:text-lg font-extrabold tracking-tight ${doc.accent}`}>
+                          {slot.period}
+                        </p>
+                        <p className="text-[11px] sm:text-xs font-semibold text-slate-500 flex items-center gap-1.5 mt-0.5">
+                          <FaRegCalendarCheck className="text-[10px]" />
+                          {slot.sub}
+                        </p>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+
+                {/* Available every day badge for female doctor */}
+                {doc.schedule.length === 1 && (
+                  <div className="mt-4 inline-flex items-center gap-2 rounded-full bg-emerald-50 px-4 py-2 ring-1 ring-emerald-200">
+                    <FaCheckCircle className="text-emerald-600 text-xs" />
+                    <span className="text-xs font-bold text-emerald-700">
+                      Available All 7 Days
+                    </span>
+                  </div>
+                )}
               </div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
 
-        {/* Patient information */}
+        {/* ── Patient information ── */}
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -175,7 +211,6 @@ export default function Timings() {
           className="relative mt-10 mx-auto max-w-5xl overflow-hidden rounded-3xl border border-blue-100 bg-white shadow-[0_12px_40px_rgba(37,99,235,0.07)]"
         >
           <div className="flex flex-col sm:flex-row">
-
             {/* Left accent */}
             <div className="flex sm:w-20 shrink-0 items-center justify-center bg-gradient-to-br from-blue-700 to-teal-600 py-5 sm:py-0">
               <FaInfoCircle className="text-3xl text-white" />
@@ -192,15 +227,20 @@ export default function Timings() {
                 </span>
               </div>
 
-              <p className="hindi text-sm sm:text-base leading-8 text-slate-600">
-                यहाँ 0 से 18 साल तक के बच्चों को देखा जाता है।
-                15 दिन तक पूर्जा मान्य होगा।
-              </p>
-            </div>
-
-            {/* Arrow decoration */}
-            <div className="hidden lg:flex items-center pr-8 text-blue-200">
-              <FaArrowRight className="text-2xl" />
+              <ul className="space-y-2">
+                <li className="hindi text-sm sm:text-base leading-8 text-slate-600 flex items-start gap-2">
+                  <span className="mt-3 w-1.5 h-1.5 rounded-full bg-blue-600 shrink-0" />
+                  यहाँ 0 से 18 साल तक के बच्चों को देखा जाता है।
+                </li>
+                <li className="hindi text-sm sm:text-base leading-8 text-slate-600 flex items-start gap-2">
+                  <span className="mt-3 w-1.5 h-1.5 rounded-full bg-blue-600 shrink-0" />
+                  15 दिन तक पूर्जा मान्य होगा।
+                </li>
+                <li className="hindi text-sm sm:text-base leading-8 text-slate-600 flex items-start gap-2">
+                  <span className="mt-3 w-1.5 h-1.5 rounded-full bg-blue-600 shrink-0" />
+                  डॉ. नगमा अमान (स्त्री रोग विशेषज्ञ) सभी 7 दिन उपलब्ध हैं।
+                </li>
+              </ul>
             </div>
           </div>
         </motion.div>
@@ -215,7 +255,6 @@ export default function Timings() {
         >
           For appointments and enquiries, please contact the hospital directly.
         </motion.p>
-
       </div>
     </section>
   );

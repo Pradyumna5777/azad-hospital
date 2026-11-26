@@ -28,7 +28,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative isolate overflow-hidden bg-gradient-to-br from-sky-50 via-white to-teal-50/60 pt-28 pb-16 sm:pt-32 sm:pb-20 lg:min-h-[90vh] lg:pt-28 lg:pb-24"
+      className="relative md:mt-7 isolate overflow-hidden bg-gradient-to-br from-sky-50 via-white to-teal-50/60 pt-28 pb-16 sm:pt-32 sm:pb-20 lg:min-h-[90vh] lg:pt-28 lg:pb-24"
     >
       {/* Background decoration */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">

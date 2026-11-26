@@ -229,7 +229,7 @@ export default function Contact() {
               </p>
             </InfoCard>
 
-            {/* Timings */}
+            {/* Doctor Timings */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -242,22 +242,48 @@ export default function Contact() {
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-500 to-amber-600 flex items-center justify-center text-white text-lg shrink-0 shadow-md">
                   <FaClock />
                 </div>
-                <div className="flex-1">
-                  <h3 className="font-bold text-slate-900 mb-2 text-sm tracking-wide uppercase">
-                    Timings
+                <div className="flex-1 min-w-0">
+                  <h3 className="font-bold text-slate-900 mb-3 text-sm tracking-wide uppercase">
+                    Doctor Timings
                   </h3>
-                  <div className="space-y-1.5">
-                    {[
-                      { label: 'सुबह', time: '9:00 – 4:00' },
-                      { label: 'शाम', time: '6:00 – 8:00' },
-                      { label: 'रविवार', time: 'दोपहर 2 बजे तक' },
-                    ].map((t) => (
-                      <div key={t.label} className="flex items-center gap-2 text-sm">
-                        <span className="w-1.5 h-1.5 rounded-full bg-orange-500 shrink-0" />
-                        <span className="hindi text-slate-600 font-medium min-w-[60px]">{t.label}</span>
-                        <span className="text-slate-700">{t.time}</span>
+
+                  {/* Dr. Abul Kalam Azad */}
+                  <div className="mb-3">
+                    <p className="text-xs font-bold text-blue-700 mb-1">
+                      Dr. Abul Kalam Azad
+                    </p>
+                    <div className="space-y-1">
+                      <div className="flex items-center gap-2 text-xs">
+                        <span className="w-1.5 h-1.5 rounded-full bg-blue-500 shrink-0" />
+                        <span className="hindi text-slate-600 min-w-[60px]">सुबह</span>
+                        <span className="text-slate-700">10:00 – 4:00</span>
                       </div>
-                    ))}
+                      <div className="flex items-center gap-2 text-xs">
+                        <span className="w-1.5 h-1.5 rounded-full bg-blue-500 shrink-0" />
+                        <span className="hindi text-slate-600 min-w-[60px]">शाम</span>
+                        <span className="text-slate-700">6:00 – 8:00</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-xs">
+                        <span className="w-1.5 h-1.5 rounded-full bg-blue-500 shrink-0" />
+                        <span className="hindi text-slate-600 min-w-[60px]">रविवार</span>
+                        <span className="text-slate-700">10:00 – 2:00</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Dr. Naghma Aman */}
+                  <div className="pt-3 border-t border-slate-100">
+                    <p className="text-xs font-bold text-rose-700 mb-1">
+                      Dr. Naghma Aman
+                    </p>
+                    <div className="flex items-center gap-2 text-xs">
+                      <span className="w-1.5 h-1.5 rounded-full bg-rose-500 shrink-0" />
+                      <span className="hindi text-slate-600 min-w-[60px]">प्रतिदिन</span>
+                      <span className="text-slate-700">10:00 – 4:00</span>
+                    </div>
+                    <p className="text-[10px] text-emerald-600 font-semibold mt-1 pl-3.5">
+                      All 7 days
+                    </p>
                   </div>
                 </div>
               </div>
@@ -311,7 +337,9 @@ export default function Contact() {
                     <FaPaperPlane />
                   </div>
                   <div>
-                    <h3 className="font-bold text-slate-900 leading-tight">Book an Appointment</h3>
+                    <h3 className="font-bold text-slate-900 leading-tight">
+                      Book an Appointment
+                    </h3>
                     <p className="text-xs text-slate-500">We'll respond via WhatsApp</p>
                   </div>
                 </div>

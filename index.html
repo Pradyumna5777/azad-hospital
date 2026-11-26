@@ -2,23 +2,33 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/images/logo.png" />
+    <link rel="apple-touch-icon" href="/images/logo.png" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#0c4a6e" />
 
     <!-- Primary SEO -->
-    <title>Azad Hospital Siwan | Best Hospital for Child & Women Care in Siwan</title>
+    <title>Azad Hospital Siwan | Best Pediatrician & Gynecologist in Siwan, Bihar</title>
     <meta
       name="description"
-      content="Azad Hospital Siwan - Expert pediatric & gynecology care. Dr. Abul Kalam Azad (Pediatrician) & Dr. Naghma Aman (Gynecologist). 24hr ambulance, NICU, PICU, Pathology & more."
+      content="Azad Hospital Siwan offers expert child care (0-18 yrs) by Dr. Abul Kalam Azad (Pediatrician) & women's health by Dr. Naghma Aman (Gynecologist). NICU, PICU, 24hr ambulance, pathology, vaccination in Siwan."
     />
     <meta
       name="keywords"
-      content="Azad Hospital Siwan, hospital in Siwan, pediatrician Siwan, gynecologist Siwan, Dr Abul Kalam Azad, Dr Naghma Aman, NICU Siwan, child specialist Siwan, maternity hospital Siwan, vaccination Siwan"
+      content="Azad Hospital Siwan, best hospital in Siwan, pediatrician in Siwan, child specialist Siwan, gynecologist in Siwan, Dr Abul Kalam Azad Siwan, Dr Naghma Aman Siwan, NICU Siwan, PICU Siwan, maternity hospital Siwan, normal delivery Siwan, cesarean Siwan, vaccination Siwan, 24 hour ambulance Siwan, pathology Siwan"
     />
     <meta name="author" content="Azad Hospital Siwan" />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
     <link rel="canonical" href="https://azadhospitalsiwan.com/" />
+
+    <!-- Geo Tags for Local SEO -->
+    <meta name="geo.region" content="IN-BR" />
+    <meta name="geo.placename" content="Siwan" />
+    <meta name="geo.position" content="26.2196;84.3560" />
+    <meta name="ICBM" content="26.2196, 84.3560" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -30,6 +40,7 @@
     <meta property="og:image" content="/images/hospital-1.jpg" />
     <meta property="og:url" content="https://azadhospitalsiwan.com/" />
     <meta property="og:site_name" content="Azad Hospital Siwan" />
+    <meta property="og:locale" content="en_IN" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -37,54 +48,153 @@
     <meta name="twitter:description" content="Expert pediatric & gynecology care in Siwan." />
     <meta name="twitter:image" content="/images/hospital-1.jpg" />
 
-    <!-- Local Business Schema -->
+    <!-- ═══════════════════════════════════════════════════════════
+         STRUCTURED DATA — MedicalClinic + Physicians + FAQ
+         ═══════════════════════════════════════════════════════════ -->
     <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Hospital",
-        "name": "Azad Hospital Siwan",
-        "image": "/images/hospital-1.jpg",
-        "url": "https://azadhospitalsiwan.com/",
-        "telephone": "+916207263830",
-        "priceRange": "₹₹",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "M.M. Colony Main Gate, Siswan Dhala, Ismail Shaheed Road",
-          "addressLocality": "Siwan",
-          "addressRegion": "Bihar",
-          "postalCode": "841226",
-          "addressCountry": "IN"
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalClinic",
+      "@id": "https://azadhospitalsiwan.com/#clinic",
+      "name": "Azad Hospital Siwan",
+      "alternateName": ["Azad Hospital", "Azad Hospital Siwan Bihar"],
+      "description": "Azad Hospital Siwan provides expert pediatric care for children (0-18 years) and comprehensive obstetrics & gynecology services for women. Led by Dr. Abul Kalam Azad (Pediatrician & Neonatologist) and Dr. Naghma Aman (Obstetrician & Gynecologist).",
+      "url": "https://azadhospitalsiwan.com/",
+      "logo": "https://azadhospitalsiwan.com/images/logo.png",
+      "image": "https://azadhospitalsiwan.com/images/hospital-1.jpg",
+      "telephone": "+916207263830",
+      "priceRange": "₹₹",
+      "currenciesAccepted": "INR",
+      "paymentAccepted": "Cash, UPI, Card",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "M.M. Colony Main Gate, Siswan Dhala, Ismail Shaheed Road",
+        "addressLocality": "Siwan",
+        "addressRegion": "Bihar",
+        "postalCode": "841226",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 26.2196,
+        "longitude": 84.3560
+      },
+      "hasMap": "https://www.google.com/maps/search/?api=1&query=Azad+Hospital+Ismail+Shaheed+Road+Siwan+Bihar+841226",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+          "opens": "10:00",
+          "closes": "16:00",
+          "description": "Dr. Abul Kalam Azad - Morning OPD"
         },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 26.2196,
-          "longitude": 84.356
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+          "opens": "18:00",
+          "closes": "20:00",
+          "description": "Dr. Abul Kalam Azad - Evening OPD"
         },
-        "openingHoursSpecification": [
-          {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-            "opens": "09:00",
-            "closes": "16:00"
-          },
-          {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-            "opens": "18:00",
-            "closes": "20:00"
-          },
-          {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": "Sunday",
-            "opens": "09:00",
-            "closes": "14:00"
-          }
-        ],
-        "medicalSpecialty": ["Pediatric", "Gynecologic", "Neonatology"]
-      }
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Sunday",
+          "opens": "10:00",
+          "closes": "14:00",
+          "description": "Dr. Abul Kalam Azad - Sunday OPD"
+        }
+      ],
+      "medicalSpecialty": [
+        "https://schema.org/Pediatric",
+        "https://schema.org/Obstetric",
+        "https://schema.org/Gynecologic",
+        "https://schema.org/Neonatal"
+      ],
+      "availableService": [
+        { "@type": "MedicalProcedure", "name": "OPD Consultation" },
+        { "@type": "MedicalProcedure", "name": "IPD Admission" },
+        { "@type": "MedicalProcedure", "name": "NICU Care" },
+        { "@type": "MedicalProcedure", "name": "PICU Care" },
+        { "@type": "MedicalProcedure", "name": "Day Care Service" },
+        { "@type": "MedicalTest", "name": "Pathology" },
+        { "@type": "MedicalProcedure", "name": "CTG" },
+        { "@type": "MedicalProcedure", "name": "ECG" },
+        { "@type": "MedicalProcedure", "name": "Normal Vaginal Delivery" },
+        { "@type": "MedicalProcedure", "name": "Cesarean Section Delivery" },
+        { "@type": "MedicalProcedure", "name": "Hysterectomy" },
+        { "@type": "MedicalProcedure", "name": "BTL" },
+        { "@type": "MedicalProcedure", "name": "D&E" },
+        { "@type": "MedicalProcedure", "name": "All Types of Vaccination" }
+      ],
+      "employee": [
+        {
+          "@type": "Physician",
+          "name": "Dr. Abul Kalam Azad",
+          "medicalSpecialty": ["https://schema.org/Pediatric", "https://schema.org/Neonatal"],
+          "description": "M.B.B.S, D.C.H (AMU), D.N.B. (Paediatrics) New Delhi. BCMR No. 44653. Formerly at Kurji Holy Family Hospital Patna, Fortis Hospital Noida, Jaypee Hospital Noida.",
+          "image": "https://azadhospitalsiwan.com/images/doctor-azad.jpeg"
+        },
+        {
+          "@type": "Physician",
+          "name": "Dr. Naghma Aman",
+          "medicalSpecialty": ["https://schema.org/Obstetric", "https://schema.org/Gynecologic"],
+          "description": "M.B.B.S, M.D (Obs & Gynae). BCMR No. 45942. Formerly at Jyoti Punj Hospital Patna, Adiva Hospital (IVF Centre) New Delhi, ESI Hospital Noida & Gurgaon.",
+          "image": "https://azadhospitalsiwan.com/images/doctor-naghma.jpg"
+        }
+      ]
+    }
     </script>
 
-    <!-- Fonts: Josefin Sans (primary) + Noto (Devanagari & Urdu scripts) -->
+    <!-- FAQ Schema (for AI Overviews & voice search) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What are the timings of Azad Hospital Siwan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Dr. Abul Kalam Azad (Pediatrician) sees patients Monday to Saturday from 10:00 AM to 4:00 PM and 6:00 PM to 8:00 PM, and Sunday from 10:00 AM to 2:00 PM. Dr. Naghma Aman (Gynecologist) is available all 7 days from 10:00 AM to 4:00 PM."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What age group of children does Azad Hospital treat?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Azad Hospital Siwan provides pediatric care for children from 0 to 18 years of age."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Azad Hospital Siwan have NICU and PICU facilities?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, Azad Hospital Siwan has both NICU (Neonatal Intensive Care Unit) and PICU (Pediatric Intensive Care Unit) facilities for critically ill newborns and children."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is 24 hour ambulance service available at Azad Hospital Siwan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, Azad Hospital Siwan provides 24-hour ambulance services. You can call 6207263830 for emergency assistance."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where is Azad Hospital Siwan located?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Azad Hospital Siwan is located near M.M. Colony Main Gate, Siswan Dhala, Ismail Shaheed Road, Siwan, Bihar - 841226."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
