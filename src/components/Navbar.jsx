@@ -328,13 +328,7 @@ export default function Navbar() {
     </button>
   </div>
 
-  <div className="relative z-10 mt-7 inline-flex items-center gap-2 rounded-xl border border-white/25 bg-black/25 px-3 py-2.5 backdrop-blur-sm">
-    <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-300" />
-
-    <span className="text-xs font-semibold tracking-wide">
-      Emergency Healthcare Available 24/7
-    </span>
-  </div>
+ 
 </div>
 
 
