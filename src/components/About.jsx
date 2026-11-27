@@ -17,24 +17,25 @@ function Counter({ from = 0, to, suffix = '', duration = 1.6 }) {
   const inView = useInView(ref, { once: true, margin: '-80px' });
   const [value, setValue] = useState(from);
 
+  const isNumeric = typeof to === 'number';
+
   useEffect(() => {
-    if (!inView) return;
+    if (!inView || !isNumeric) return;
     const controls = animate(from, to, {
       duration,
       ease: 'easeOut',
       onUpdate: (v) => setValue(Math.floor(v)),
     });
     return () => controls.stop();
-  }, [inView, from, to, duration]);
+  }, [inView, from, to, duration, isNumeric]);
 
   return (
     <span ref={ref}>
-      {value}
+      {isNumeric ? value : to}
       {suffix}
     </span>
   );
 }
-
 /* ── Floating accent blob ──────────────────────────────── */
 function Blob({ className }) {
   return (
