@@ -59,7 +59,7 @@ export default function About() {
     { icon: <FaHospital />, label: 'Modern Facility', value: 100, suffix: '%', color: 'from-sky-500 to-blue-600' },
     { icon: <FaUsers />, label: 'Happy Patients', value: 10, suffix: 'K+', color: 'from-emerald-500 to-teal-600' },
     { icon: <FaAward />, label: 'Years of Care', value: 15, suffix: '+', color: 'from-amber-500 to-orange-600' },
-{ icon: <FaHeartbeat />, label: 'Expert Doctors', value: 2, suffix: '+', color: 'from-rose-500 to-red-600' },  ];
+{ icon: <FaHeartbeat />, label: ' Doctors', suffix: 'Expert', color: 'from-rose-500 to-red-600' },  ];
 
   return (
     <section id="about" className="section-padding relative overflow-hidden bg-gradient-to-b from-white via-slate-50 to-white">
