@@ -81,13 +81,6 @@ const services = [
     light: 'bg-orange-50',
   },
   {
-    icon: <FaAmbulance />,
-    title: '24-Hour Ambulance',
-    desc: 'Ambulance support for emergency transportation and timely access to medical care.',
-    color: 'from-red-600 to-rose-600',
-    light: 'bg-red-50',
-  },
-  {
     icon: <FaSyringe />,
     title: 'Vaccination',
     desc: 'Vaccination services for children and adults to support preventive healthcare.',
