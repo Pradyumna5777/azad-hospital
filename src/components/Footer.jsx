@@ -181,19 +181,7 @@ export default function Footer() {
                 </div>
               </li>
 
-              <li className="flex items-start gap-3">
-                <div className="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center shrink-0 mt-0.5">
-                  <FaWhatsapp className="text-emerald-400 text-sm" />
-                </div>
-                <a
-                  href="https://wa.me/916207263830"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-slate-400 hover:text-white transition-colors"
-                >
-                  Chat on WhatsApp
-                </a>
-              </li>
+             
             </ul>
           </motion.div>
 

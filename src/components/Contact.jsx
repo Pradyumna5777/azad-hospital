@@ -215,19 +215,7 @@ export default function Contact() {
               </div>
             </motion.div>
 
-            {/* WhatsApp */}
-            <InfoCard
-              icon={<FaWhatsapp />}
-              title="WhatsApp"
-              accent="from-emerald-500 to-green-600"
-              delay={0.2}
-              href="https://wa.me/917322983764"
-            >
-              <p className="text-sm text-slate-700">Chat with us instantly</p>
-              <p className="text-xs text-emerald-600 font-semibold mt-1 flex items-center gap-1 group-hover:gap-2 transition-all">
-                Open WhatsApp <FaExternalLinkAlt className="text-[10px]" />
-              </p>
-            </InfoCard>
+           
 
             {/* Doctor Timings */}
             <motion.div
@@ -320,115 +308,7 @@ export default function Contact() {
               </div>
             </motion.div>
 
-            {/* Appointment form */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2, duration: 0.5 }}
-              className="bg-white rounded-3xl p-6 sm:p-8 shadow-xl ring-1 ring-slate-900/5 relative overflow-hidden"
-            >
-              {/* Subtle corner gradient */}
-              <div className="absolute -top-20 -right-20 w-40 h-40 bg-gradient-to-br from-green-200/40 to-emerald-200/40 rounded-full blur-2xl pointer-events-none" />
-
-              <div className="relative">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center text-white shadow-md">
-                    <FaPaperPlane />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-slate-900 leading-tight">
-                      Book an Appointment
-                    </h3>
-                    <p className="text-xs text-slate-500">We'll respond via WhatsApp</p>
-                  </div>
-                </div>
-
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <Field
-                    id="name"
-                    name="name"
-                    label="Your Name"
-                    required
-                    icon={<FaUser />}
-                    value={form.name}
-                    onChange={handleChange}
-                  />
-                  <Field
-                    id="phone"
-                    name="phone"
-                    label="Phone Number"
-                    type="tel"
-                    required
-                    icon={<FaPhoneAlt />}
-                    value={form.phone}
-                    onChange={handleChange}
-                  />
-                  <Field
-                    id="message"
-                    name="message"
-                    label="Message / Reason"
-                    type="textarea"
-                    rows={3}
-                    required
-                    icon={<FaCommentDots />}
-                    value={form.message}
-                    onChange={handleChange}
-                  />
-
-                  <motion.button
-                    type="submit"
-                    disabled={status === 'sending'}
-                    whileHover={{ y: -2 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="relative w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white py-3.5 rounded-xl font-semibold transition-all shadow-lg hover:shadow-xl disabled:opacity-80 disabled:cursor-not-allowed overflow-hidden"
-                  >
-                    <AnimatePresence mode="wait" initial={false}>
-                      {status === 'idle' && (
-                        <motion.span
-                          key="idle"
-                          initial={{ opacity: 0, y: 10 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: -10 }}
-                          className="flex items-center justify-center gap-2"
-                        >
-                          <FaWhatsapp className="text-lg" />
-                          Book on WhatsApp
-                        </motion.span>
-                      )}
-                      {status === 'sending' && (
-                        <motion.span
-                          key="sending"
-                          initial={{ opacity: 0, y: 10 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: -10 }}
-                          className="flex items-center justify-center gap-2"
-                        >
-                          <span className="w-4 h-4 border-2 border-white/40 border-t-white rounded-full animate-spin" />
-                          Opening WhatsApp…
-                        </motion.span>
-                      )}
-                      {status === 'sent' && (
-                        <motion.span
-                          key="sent"
-                          initial={{ opacity: 0, scale: 0.9 }}
-                          animate={{ opacity: 1, scale: 1 }}
-                          exit={{ opacity: 0 }}
-                          className="flex items-center justify-center gap-2"
-                        >
-                          <FaCheckCircle className="text-lg" />
-                          Opening WhatsApp…
-                        </motion.span>
-                      )}
-                    </AnimatePresence>
-                  </motion.button>
-
-                  <p className="text-center text-xs text-slate-400">
-                    By submitting, you'll be redirected to WhatsApp to confirm.
-                  </p>
-                </form>
-              </div>
-            </motion.div>
+           
           </motion.div>
         </div>
       </div>

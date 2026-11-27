@@ -57,21 +57,7 @@ export default function Hero() {
             className="relative z-10 text-center lg:text-left"
           >
             {/* Availability badge */}
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="mb-7 inline-flex items-center gap-2.5 rounded-full border border-emerald-100 bg-white/90 px-4 py-2 shadow-sm shadow-emerald-900/5 backdrop-blur-md"
-            >
-              <span className="relative flex h-2.5 w-2.5">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
-                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500" />
-              </span>
-
-              <span className="text-xs font-bold tracking-wide text-slate-700 sm:text-sm">
-                24/7 Emergency Healthcare Available
-              </span>
-            </motion.div>
+           
 
             {/* Main heading */}
             <h1 className="mb-6 text-[2.65rem] font-extrabold leading-[1.13] tracking-tight text-slate-900 sm:text-5xl lg:text-[3.5rem] xl:text-[4rem]">
@@ -115,18 +101,7 @@ export default function Hero() {
             {/* Action buttons */}
             <div className="mb-11 flex flex-col justify-center gap-3 sm:flex-row lg:justify-start">
 
-              {/* WhatsApp Button */}
-              <a
-                href={`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Chat with Azad Hospital on WhatsApp"
-                className="group flex cursor-pointer items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-green-600 to-emerald-500 px-7 py-4 text-sm font-bold text-white shadow-xl shadow-green-600/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-green-600/30"
-              >
-                <FaWhatsapp className="text-xl" />
-                Chat on WhatsApp
-                <FaArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
-              </a>
+            
 
               {/* Call Button */}
               <a
