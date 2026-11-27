@@ -119,7 +119,7 @@ export default function Footer() {
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-white" />
               </span>
               <FaPhoneAlt className="text-xs" />
-              24/7 Emergency
+              Call Now
             </a>
           </motion.div>
 

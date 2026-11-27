@@ -232,11 +232,11 @@ export default function Hero() {
               </div>
               <div>
                 <p className="text-[10px] font-medium text-slate-500 sm:text-xs">
-                  Emergency Services
+                  Emergency Services Available
                 </p>
                 <p className="text-sm font-extrabold text-slate-900 sm:text-base">
-                  Available 24/7
-                </p>
+  During Hospital Hours
+</p>
               </div>
             </motion.div>
 
