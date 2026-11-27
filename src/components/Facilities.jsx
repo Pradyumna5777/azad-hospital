@@ -275,7 +275,7 @@ export default function Facilities() {
           {[
             { label: 'Modern Equipment', value: '100%' },
             { label: 'Expert Doctors', value: 'Qualified' },
-            { label: 'Emergency Support', value: '24/7' },
+            { label: 'Modern Facilities', value: '100%' },
             { label: 'Patient Safety', value: 'Priority' },
           ].map((item, i) => (
             <div

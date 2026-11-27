@@ -158,7 +158,7 @@ export default function Contact() {
           </span>
           <h2 className="section-title">Get in Touch</h2>
           <p className="section-subtitle">
-            Reach out for appointments, emergencies, or any queries — we're here to help 24/7.
+            Reach out for appointments, or any queries — we're here to help.
           </p>
         </motion.div>
 
