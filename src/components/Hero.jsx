@@ -15,7 +15,7 @@ import {
 const stats = [
   { icon: <FaUserMd />, value: '15+', label: 'Years Experience' },
   { icon: <FaHeartbeat />, value: '10K+', label: 'Happy Patients' },
-  { icon: <FaBaby />, value: '24/7', label: 'Emergency Care' },
+  { icon: <FaBaby />, value: 'Best', label: 'Child Care' },
 ];
 
 export default function Hero() {
